@@ -6,10 +6,8 @@ using System.Threading.Tasks;
 
 namespace Data
 {
-    class Program
+    public class Decimal
     {
-        static void Main(string[] args)
-        {
-        }
+        
     }
 }
