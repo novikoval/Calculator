@@ -31,6 +31,8 @@ namespace Data
             minus = false;
             div = false;
             mult = false;
+            if (FirstFraction.Text.Length > 0 && SecondFraction.Text.Length > 0)
+                ResultButton.Enabled = true;
         }
 
         protected void button2_Click(object sender, EventArgs e)
@@ -43,6 +45,8 @@ namespace Data
             minus = true;
             div = false;
             mult = false;
+            if (FirstFraction.Text.Length > 0 && SecondFraction.Text.Length > 0)
+                ResultButton.Enabled = true;
         }
 
         protected void button3_Click(object sender, EventArgs e)
@@ -55,6 +59,8 @@ namespace Data
             minus = false;
             div = false;
             mult = true;
+            if (FirstFraction.Text.Length > 0 && SecondFraction.Text.Length > 0)
+                ResultButton.Enabled = true;
         }
 
         protected void button4_Click(object sender, EventArgs e)
@@ -67,6 +73,8 @@ namespace Data
             minus = false;
             div = true; 
             mult = false;
+            if (FirstFraction.Text.Length > 0 && SecondFraction.Text.Length > 0)
+                ResultButton.Enabled = true;
         }
 
         protected void button5_Click(object sender, EventArgs e)
@@ -146,16 +154,35 @@ namespace Data
                 }
                 ResultBox.Text = res.ToString();
             }
+            FirstFraction.Enabled = false;
+            SecondFraction.Enabled = false;
+            ResultButton.Enabled = false;
         }
 
         protected void button6_Click(object sender, EventArgs e)
         {
             string fr = ConvertBox1.Text;
+            ConvertBox1.Enabled = false;
+            ConvertResultBut.Enabled = false;
         }
 
         protected void button8_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void SecondFraction_TextChanged(object sender, EventArgs e)
+        {
+            if (SecondFraction.Text.Length == 0)
+                ResultButton.Enabled = false;
+        }
+
+        private void ConvertBox1_TextChanged(object sender, EventArgs e)
+        {
+            if (ConvertBox1.Text.Length > 0)
+                ConvertResultBut.Enabled = true;
+            if (ConvertBox1.Text.Length == 0)
+                ConvertResultBut.Enabled = false;
         }
 
         protected void button9_Click(object sender, EventArgs e)
@@ -169,6 +196,10 @@ namespace Data
             label5.Visible = false;
             label6.Visible = false;
             label7.Visible = false;
+            ResultButton.Enabled = false;
+            FirstFraction.Enabled = true;
+            SecondFraction.Enabled = true;
+            ConvertBox1.Enabled = true;
         }
 
         protected void button10_Click(object sender, EventArgs e)
@@ -178,7 +209,8 @@ namespace Data
 
         protected void FirstFraction_TextChanged(object sender, EventArgs e)
         {
-
+            if (FirstFraction.Text.Length == 0)
+                ResultButton.Enabled = false;
         }
     }
 }

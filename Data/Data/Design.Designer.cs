@@ -89,6 +89,7 @@
             // 
             // ConvertResultBut
             // 
+            this.ConvertResultBut.Enabled = false;
             this.ConvertResultBut.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.ConvertResultBut.Location = new System.Drawing.Point(130, 15);
             this.ConvertResultBut.Name = "ConvertResultBut";
@@ -105,9 +106,11 @@
             this.ConvertBox1.Name = "ConvertBox1";
             this.ConvertBox1.Size = new System.Drawing.Size(100, 31);
             this.ConvertBox1.TabIndex = 17;
+            this.ConvertBox1.TextChanged += new System.EventHandler(this.ConvertBox1_TextChanged);
             // 
             // ConvertBox2
             // 
+            this.ConvertBox2.Enabled = false;
             this.ConvertBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.ConvertBox2.Location = new System.Drawing.Point(190, 20);
             this.ConvertBox2.Name = "ConvertBox2";
@@ -194,9 +197,11 @@
             this.SecondFraction.Name = "SecondFraction";
             this.SecondFraction.Size = new System.Drawing.Size(100, 31);
             this.SecondFraction.TabIndex = 15;
+            this.SecondFraction.TextChanged += new System.EventHandler(this.SecondFraction_TextChanged);
             // 
             // ResultButton
             // 
+            this.ResultButton.Enabled = false;
             this.ResultButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.ResultButton.Location = new System.Drawing.Point(310, 15);
             this.ResultButton.Name = "ResultButton";
@@ -326,7 +331,7 @@
             this.Controls.Add(this.CancelButton);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Design";
