@@ -9,10 +9,10 @@ namespace Data
     //класс для десятичной дроби
     public class DecimalFraction : Fraction 
     {
-        private float value;//сама десятичная дробь
+        private double value;//сама десятичная дробь
         private int countSigns; //кол-во знаков после запятой
 
-        public float Value
+        public double Value
         {
             get
             {
@@ -20,7 +20,7 @@ namespace Data
             }
         }
 
-        public DecimalFraction(float value)//если на вход подана дробь
+        public DecimalFraction(double value)//если на вход подана дробь
         {
             this.value = value;
 
@@ -36,10 +36,26 @@ namespace Data
             if (IsValid(data))
             {
                 data = data.Replace(".", ",");
-
                 value = float.Parse(data);
+                DecimalFraction s = (DecimalFraction)value;
+                //value = float.Parse(data);
             }
         }
+
+        public static implicit operator DecimalFraction(SimpleFraction sf)
+        {
+            double number = sf.Numerator * 0.1 / 0.1 / sf.Denominator;
+            DecimalFraction temp = new DecimalFraction(number);
+            return temp;
+        }
+
+        public static implicit operator DecimalFraction(double f)
+        {
+            //float number = f.Nominator * 0.1F / 0.1F / f.Denominator;
+            DecimalFraction temp = new DecimalFraction(f);
+            return temp;
+        }
+
 
         public SimpleFraction ConvertTo() //преобразование десятичной дроби в обыкновенную
         {
@@ -57,7 +73,6 @@ namespace Data
         public static DecimalFraction operator +(DecimalFraction fr1, DecimalFraction fr2)
         {
             DecimalFraction res = new DecimalFraction(fr1.Value + fr2.Value);
-
             return res;
         }
 
@@ -81,6 +96,12 @@ namespace Data
 
             return res;
         }
+
+        public override string ToString()
+        {
+            return value.ToString();
+        }
+
 
     }
 }

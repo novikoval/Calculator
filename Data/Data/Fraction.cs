@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Data
 {
-    abstract class Fraction
+    public abstract class Fraction
     {
 
     }
