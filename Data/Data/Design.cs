@@ -71,7 +71,7 @@ namespace Data
 
         protected void button5_Click(object sender, EventArgs e)
         {
-            if (FirstFraction.Text.Contains("/") && SecondFraction.Text.Contains("/"))
+            if (FirstFraction.Text.Contains("/") && SecondFraction.Text.Contains("/")&&!FirstFraction.Text.Contains(".") && !SecondFraction.Text.Contains(",")&& !FirstFraction.Text.Contains(",") && !SecondFraction.Text.Contains("."))
             {
                 SimpleFraction sr1 = new SimpleFraction(FirstFraction.Text);
                 SimpleFraction sr2 = new SimpleFraction(SecondFraction.Text);
@@ -95,8 +95,8 @@ namespace Data
             }
             else
             {
-                DecimalFraction Fr1 = new DecimalFraction(3.5f);
-                DecimalFraction Fr2 = new DecimalFraction(3.5f);
+                DecimalFraction Fr1 = new DecimalFraction(3.5);
+                DecimalFraction Fr2 = new DecimalFraction(3.5);
                 if (FirstFraction.Text.Contains("/"))
                 {
                     SimpleFraction fr1 = new SimpleFraction(FirstFraction.Text);
